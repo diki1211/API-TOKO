@@ -32,6 +32,13 @@ const login = async (req, res) => {
         });
       }
     }
+    else {
+      res.status(401).json({
+        status: 401,
+        timestamp: new Date().toLocaleTimeString(),
+        message: "Emailnya belum terdaftar nih gan",
+      });
+    }
   } catch (error) {
     res.status(500).json({
       status: 500,
